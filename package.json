@@ -18,5 +18,14 @@
   "homepage": "https://github.com/doYoungAn/vue-webpack-typescript#readme",
   "dependencies": {
     "vue": "^2.5.17"
+  },
+  "devDependencies": {
+    "css-loader": "^1.0.0",
+    "ts-loader": "^4.5.0",
+    "typescript": "^3.0.1",
+    "vue-loader": "^15.4.0",
+    "vue-template-compiler": "^2.5.17",
+    "webpack": "^4.17.1",
+    "webpack-dev-server": "^3.1.5"
   }
 }
