@@ -1,0 +1,22 @@
+{
+  "name": "vue-webpack-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/doYoungAn/vue-webpack-typescript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/doYoungAn/vue-webpack-typescript/issues"
+  },
+  "homepage": "https://github.com/doYoungAn/vue-webpack-typescript#readme",
+  "dependencies": {
+    "vue": "^2.5.17"
+  }
+}
