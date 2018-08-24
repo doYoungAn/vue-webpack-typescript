@@ -1,12 +1,11 @@
 'use strict'
 
 const webpack = require('webpack')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { VueLoaderPlugin } = require('vue-loader')
+const merge = require('webpack-merge')
+const baseConfig = require('./webpack.config.base')
 
-module.exports = {
+module.exports = merge(baseConfig, {
   mode: 'development',
-  entry: './src/main.ts',
   devServer: {
     hot: true,
     host: 'localhost',
@@ -19,23 +18,6 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.vue$/,
-        loader: 'vue-loader'
-      },
-      {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/
-      },
-      {
-        test: /\.tsx?$/,
-        loader: 'ts-loader',
-        exclude: /node_modules/,
-        options: {
-          appendTsSuffixTo: [/\.vue$/],
-        }
-      },
-      {
         test: /\.(s*)css$/,
         use: [
           'vue-style-loader',
@@ -45,19 +27,7 @@ module.exports = {
       }
     ]
   },
-  resolve: {
-    extensions: ['.ts', '.js', '.vue', '.json'],
-    alias: {
-      vue$: 'vue/dist/vue.esm.js'
-    }
-  },
   plugins: [
-    new VueLoaderPlugin(),
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: 'index.html',
-      inject: true
-    }),
     new webpack.HotModuleReplacementPlugin()
   ]
-}
+})
