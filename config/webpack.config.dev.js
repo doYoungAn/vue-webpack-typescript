@@ -23,9 +23,17 @@ module.exports = {
         loader: 'vue-loader'
       },
       {
-        test: '/\.tsx?$/',
-        loader: 'ts-loader',
+        test: /\.js$/,
+        loader: 'babel-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.tsx?$/,
+        loader: 'ts-loader',
+        exclude: /node_modules/,
+        options: {
+          appendTsSuffixTo: [/\.vue$/],
+        }
       },
       {
         test: /\.(s*)css$/,
@@ -36,6 +44,12 @@ module.exports = {
         ]
       }
     ]
+  },
+  resolve: {
+    extensions: ['.ts', '.js', '.vue', '.json'],
+    alias: {
+      vue$: 'vue/dist/vue.esm.js'
+    }
   },
   plugins: [
     new VueLoaderPlugin(),
